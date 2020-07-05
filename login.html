@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+        <style>
+            #tab{
+                padding-top:50px;
+            }
+            h1{
+                color: blue;
+            }
+            table{
+                box-shadow: 2px 2px 3px 3px #888888; 
+            }
+            table,th,td{
+                border:3px solid white;
+                border-collapse: collapse;
+                align-items: center;
+                background-color:#00CBC6;
+            }
+            th,td{
+                padding:15px;
+            }
+            </style>
+            <script>
+                function func(){
+                    var username = document.getElementById("name");
+                    var password = document.getElementById("pass");
+                    var count = 0;
+
+                    document.getElementById("txt").innerHTML = "";
+
+                    if(username.value.length !=8 && password.value.length !=8){
+                        document.getElementById("txt").innerHTML = "Username and Password must be of 8 Characters";
+                        ++count;
+                    }
+
+                    if(username.value.length != 8 && count===0){
+                        document.getElementById("txt").innerHTML = "Username must be of 8 characters";
+                    }
+                    if(password.value.length != 8 && count===0){
+                        document.getElementById("txt").innerHTML = "Password must be of 8 characters";
+                    }
+                }
+            </script>
+    </head>
+    <body>
+        <center>
+            <h1>Account Login</h1>
+        <div id="tab">
+                <table>
+                <tr>
+                    <th>User Name:</th>
+                    <td><input name = "usernmae" id="name" type="text"></td>
+                </tr>
+                <tr>
+                    <th>Password:</th>
+                    <td><input name = "usernmae" id="pass" type="password"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button onclick="func()">Submit</button></td>
+                </tr>
+             </table>
+             <p id="txt"></p>
+         </div>
+        </center>
+    </body>
+</html>
